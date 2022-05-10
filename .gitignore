@@ -3,3 +3,5 @@
 *.swp
 data/OpenWeather
 Session.vim
+.vscode/tasks.json
+.vscode/launch.json

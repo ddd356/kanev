@@ -64,6 +64,7 @@ app1 key timeDiv = serve userAPI (server1 key timeDiv)
 
 main :: IO ()
 main = do
+  print "server starting..."
   apiKey <- lookupEnv "openweathermap_api_key"
   settingsPath <- lookupEnv "openweathermap_settings"
   when (isJust apiKey && isJust settingsPath) $ do
