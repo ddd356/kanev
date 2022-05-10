@@ -25,13 +25,30 @@ source-repository head
 
 library
   exposed-modules:
+      CurrentWeather
+      Env
+      GetFromOpenWeather
+      History
       Lib
+      RedisCommands
   other-modules:
       Paths_kanev
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , hedis
+    , mtl
+    , openweathermap
+    , servant-client-core
+    , servant-server
+    , time
+    , transformers
+    , wai
+    , warp
   default-language: Haskell2010
 
 executable kanev-exe
@@ -42,8 +59,20 @@ executable kanev-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , hedis
     , kanev
+    , mtl
+    , openweathermap
+    , servant-client-core
+    , servant-server
+    , time
+    , transformers
+    , wai
+    , warp
   default-language: Haskell2010
 
 test-suite kanev-test
@@ -55,6 +84,18 @@ test-suite kanev-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , hedis
     , kanev
+    , mtl
+    , openweathermap
+    , servant-client-core
+    , servant-server
+    , time
+    , transformers
+    , wai
+    , warp
   default-language: Haskell2010

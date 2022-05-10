@@ -21,6 +21,19 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- transformers
+- time
+- mtl
+- containers
+- time
+- servant-server
+- servant-client-core
+- wai
+- warp
+- aeson
+- openweathermap
+- bytestring
+- hedis
 
 library:
   source-dirs: src
