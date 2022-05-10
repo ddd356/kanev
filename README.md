@@ -1,7 +1,7 @@
 kanev
 ====
 
-Kanev is a caching server of weather from openweathermap.org data build on a Redis database
+Kanev is a caching server of weather data from openweathermap.org build on a Redis database
 
 # redis
 Redis server must be running on a standard port.
