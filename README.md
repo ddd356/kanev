@@ -46,7 +46,7 @@ Here is:
 
 # endpoints
 There are two endpoints:
-- \current_weather\lat\lon
+- \current_weather\lon\lat
 - \history\lon\lat\utc_time
 
 Example:
