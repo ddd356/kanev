@@ -3,6 +3,7 @@
 Kanev is a caching server of weather data build on a Redis database
 
 Set environment variables:
+
   API Key to openweathermap.com
   openweathermap_api_key
 
