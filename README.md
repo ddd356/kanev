@@ -38,11 +38,11 @@ Example:
 ```
 
 Here is:
-- port                -- port, where your server runs
-- locations           -- list of locations for which your server will cache data.
-- updatePeriod        -- how often data will be downloaded (minutes)
-- locationDivergense  -- divergense between location in "history" query and location in cache (km).
-- timeDivergense      -- divergense between time in "history" query and time in cache (minutes)
+- **port**                -- port, where your server runs
+- **locations**           -- list of locations for which your server will cache data.
+- **updatePeriod**        -- how often data will be downloaded (minutes)
+- **locationDivergense**  -- divergense between location in "history" query and location in cache (km).
+- **timeDivergense**      -- divergense between time in "history" query and time in cache (minutes)
 
 # endpoints
 There are two endpoints:
