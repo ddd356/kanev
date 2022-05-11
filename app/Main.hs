@@ -67,6 +67,8 @@ main = do
   print "server starting..."
   apiKey <- lookupEnv "openweathermap_api_key"
   settingsPath <- lookupEnv "openweathermap_settings"
+  when (isNothing apiKey) (print "ERROR: set environment variable \"openweathermap_api_key\"")
+  when (isNothing settingsPath) (print "ERROR: set environment variable \"openweathermap_settings\"")
   when (isJust apiKey && isJust settingsPath) $ do
     settings <- liftM (Data.Aeson.eitherDecode :: BSLazy.ByteString -> Either String Env.Settings) $ BSLazy.readFile (fromJust settingsPath)
     when (isLeft settings) (print settings)
@@ -74,13 +76,14 @@ main = do
       let (Right s) = settings
       let env = Env (fromJust apiKey) s
       forkIO $ runReaderT runServer env
-      forkIO $
-        forever $ do
-          threadDelay (updatePeriod s * 1000 * 1000 * 60)
-          runReaderT getWeatherFromOpenWeatherServer env
+      --      forkIO $
+      --        forever $ do
+      --          threadDelay (updatePeriod s * 1000 * 1000 * 60)
+      --          runReaderT getWeatherFromOpenWeatherServer env
+      forever $ do
+        threadDelay (updatePeriod s * 1000 * 1000 * 60)
+        runReaderT getWeatherFromOpenWeatherServer env
       return ()
-  when (isNothing apiKey) (print "ERROR: set environment variable \"openweathermap_api_key\"")
-  when (isNothing settingsPath) (print "ERROR: set environment variable \"openweathermap_settings\"")
   return ()
 
 runServer :: ReaderT Env (IO) ()
