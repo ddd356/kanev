@@ -51,4 +51,4 @@ There are two endpoints:
 
 Example:
 - `curl "http://127.0.0.1:8081/current_weather/10.1/11.2"`
-- `curl "http://127.0.0.1:8081/history/10.1/11.2/01-01-2021T10:00:00Z"`
+- `curl "http://127.0.0.1:8081/history/10.1/11.2/2021-01-01T10:00:00Z"`
